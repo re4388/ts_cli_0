@@ -1,0 +1,30 @@
+{
+  "lookup": {
+    "start": "when a socket is assigned",
+    "end": "when the hostname has been resolved.",
+    "note": "Does not apply when using a Unix domain socket. Does not apply when passing an IP address, It is preferred to not use any greater value than 100"
+  },
+  "connect": {
+    "start": "when lookup completes.Ends when the socket is fully connected.",
+    "end": "when the socket is fully connected",
+    "note": "If lookup does not apply to the request, this event starts when the socket is assigned"
+  },
+  "secureConnect": {
+    "start": "when connect completes",
+    "end": "when the handshake process completes",
+    "note":"This timeout applies only to HTTPS requests"
+  },
+  "socket": {
+    "start": "when the socket is connected",
+    "Resets": "when new data is transferred"
+  },
+  "send": {
+    "start": "when the socket is connected",
+    "end": "when all data have been written to the socket",
+    "note": "This does not assure the data have been received by the other end.It only assures that the data have been passed to the underlying OS"
+  },
+  "response": {
+    "start": "when request has been flushed",
+    "end": "when the headers are received"
+  }
+}
